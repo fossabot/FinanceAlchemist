@@ -1,3 +1,5 @@
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Falexi-courieux%2FFinanceAlchemist.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Falexi-courieux%2FFinanceAlchemist?ref=badge_shield)
+
 ﻿# React Native Boilerplate
 This is a React Native boilerplate project using TypeScript, React Navigation, and React Native Paper. It includes a basic setup for navigation and theming.  
 
@@ -41,3 +43,5 @@ This is a React Native boilerplate project using TypeScript, React Navigation, a
 
 ### License
 This project is licensed under the MIT License.
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Falexi-courieux%2FFinanceAlchemist.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Falexi-courieux%2FFinanceAlchemist?ref=badge_large)
