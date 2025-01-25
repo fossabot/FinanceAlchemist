@@ -1,20 +1,39 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import {Platform} from 'react-native';
+import { Provider as PaperProvider } from 'react-native-paper';
+import {createMaterialBottomTabNavigator} from "react-native-paper/react-navigation";
+import {NavigationContainer} from "@react-navigation/native";
+import AppRoutes from "./navigation/AppRoutes";
+import HomeScreen from "./screens/HomeScreen";
+
+const Tab = createMaterialBottomTabNavigator()
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <PaperProvider>
+      <NavigationContainer>
+        {Platform.OS === 'web' ? (
+          <HomeScreen/>
+        )
+        : (
+            <Tab.Navigator>
+            {
+              AppRoutes.map((r) => (
+                <Tab.Screen
+                  key={r.name}
+                  name={r.name}
+                  component={r.component}
+                  options={{
+                    tabBarIcon: r.icon
+                  }}
+                />
+              ))
+            }
+          </Tab.Navigator>
+          )
+        }
+
+      </NavigationContainer>
+    </PaperProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
